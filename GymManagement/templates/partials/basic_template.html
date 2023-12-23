@@ -1,0 +1,158 @@
+{% load static %}
+<!doctype html>
+<html lang="en" dir="ltr">
+
+
+<!-- META DATA -->
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="keywords" content="">
+
+<!-- TITLE -->
+<title>{% block title %}{% endblock %}</title>
+
+<!-- FAVICON -->
+<link rel="shortcut icon" type="image/x-icon" href="/static/assets/images/brand/fav.png" />
+
+<!-- BOOTSTRAP CSS -->
+<link id="style" href="/static/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+<!-- STYLE CSS -->
+<link href="/static/assets/css/menu.css" rel="stylesheet" />
+<link href="/static/assets/css/style.css?v=1.1.0" rel="stylesheet" />
+<link href="/static/css/custom_style.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css" />
+{% comment %} <script type="text/javascript" src="\static\js\multiselect\multiselect-dropdown.js"></script> {% endcomment %}
+</head>
+
+<body class="ltr app sidebar-mini sidenav-toggled">
+
+    <!-- GLOBAL-LOADER -->
+    <div id="global-loader">
+        <img src="/static/assets/images/loader.svg" class="loader-img" alt="Loader">
+    </div>
+    <!-- /GLOBAL-LOADER -->
+
+    <!-- /PAGE-LOADER -->
+    <div class="loading" style="display:none;">Loading&#8230;</div>
+    <!-- /PAGE-LOADER -->
+
+    <!-- PAGE -->
+    <div class="page">
+        <div class="page-main">
+            <!-- app-Header -->
+            <div class="app-header header">
+                <div class="container-fluid">
+                    <div class="d-flex align-items-center justify-content-between">
+
+                        <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-bs-toggle="sidebar" href="#"></a>
+                        <!-- sidebar-toggle-->
+                        <a class="logo-horizontal me-auto" href="../index.html">
+                            <img src="/static/assets/images/brand/logo.png" class="header-brand-img" alt="logo" style="height: auto; width: 30%;">
+                        </a>
+                        <!-- LOGO -->
+
+                        <div class="header-right-icons">
+                            
+                            <!-- Profile -->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- /app-Header -->
+
+            <!-- app body -->
+            <div class="app-body container-fluid">
+                <div class="row">
+                    <!--APP-SIDEBAR-->
+                    {% include "partials/leftMenu.html" %}
+                    <!--/APP-SIDEBAR-->
+
+                    <!--app-content open-->
+                    <div class="app-content main-content col">
+                        <div class="side-app">
+
+                            <!-- CONTAINER -->
+                            <div class="main-container container-fluid">
+
+                                {% block content %}{% endblock %}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CONTAINER CLOSED -->
+                </div>
+            </div>
+            <!-- /app body -->
+        </div>
+    </div>
+    <!-- /PAGE -->
+
+    <!-- BACK-TO-TOP -->
+    <a href="#top" id="back-to-top"><i class="fa fa-long-arrow-up"></i></a>
+
+    <!-- JQUERY JS -->
+    <script src="/static/assets/plugins/jquery/jquery.min.js"></script>
+
+    <!-- JQUERY VALIDATOR JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+
+    <!-- BOOTSTRAP JS -->
+    <script src="/static/assets/plugins/bootstrap/js/popper.min.js"></script>
+    <script src="/static/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <!-- INTERNAL SELECT2 JS -->
+    <script src="/static/assets/plugins/select2/select2.full.min.js"></script>
+
+    <!-- GALLERY JS -->
+    <script src="/static/assets/plugins/gallery/picturefill.js"></script>
+    <script src="/static/assets/plugins/gallery/lightgallery.js"></script>
+    <script src="/static/assets/plugins/gallery/lightgallery-1.js"></script>
+    <script src="/static/assets/plugins/gallery/lg-pager.js"></script>
+    <script src="/static/assets/plugins/gallery/lg-autoplay.js"></script>
+    <script src="/static/assets/plugins/gallery/lg-fullscreen.js"></script>
+    <script src="/static/assets/plugins/gallery/lg-zoom.js"></script>
+    <script src="/static/assets/plugins/gallery/lg-hash.js"></script>
+
+    <!--Internal Fancy uploader js-->
+    <script src="/static/fancyuploder/jquery.ui.widget.js"></script>
+    <script src="/static/fancyuploder/jquery.fileupload.js"></script>
+    <script src="/static/fancyuploder/jquery.iframe-transport.js"></script>
+    <script src="/static/fancyuploder/jquery.fancy-fileupload.js"></script>
+    <script src="/static/fancyuploder/fancy-uploader.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+    <!-- CUSTOM JS -->
+    <script src="/static/assets/js/custom.js"></script>
+    <script src="/static/js/common.js"></script>
+
+    <!-- DATE TIME -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css">
+
+    <!-- Js Pagination Class -->
+    <script src="/static/js/pagination/paging_list.js?v=0.0.3"></script>
+    <script>
+
+        $(document).ready(function() {
+            // Add mouseout event handler for elements with the class 'example-class'
+            $('.main-content').mouseover(function() {
+              // Your code to be executed when the mouse leaves the element
+              $('body').attr('class', 'ltr app sidebar-mini sidenav-toggled'); // Example: Change background color to red
+            });
+        });
+    </script>
+    <!-- JS Section-->
+    {% block script  %}{% endblock %}
+</body>
+
+
+</html>

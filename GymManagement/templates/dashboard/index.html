@@ -1,0 +1,188 @@
+{% extends "partials/basic_template.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<div class="main-container container-fluid">
+    <div class="page-header">
+        <div class="col-lg-12 mb-3">
+            <h1 class="page-title">Hi Aditya</h1>
+        </div>
+    
+        <div class="col-lg-12">
+            <div class="row">
+
+                <div class="col-lg-9 col-md-8">
+                    <div class="form-group search-group">
+                        <input class="form-control" placeholder="Search by Customer name, number" type="search">
+                        <button class="btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="26.093" height="25.922"
+                                viewBox="40 192 26.093 25.922">
+                                <path
+                                    d="m65.66 215.47-4.683-4.618a11.644 11.644 0 0 0 2.416-5.794c.4-3.267-.593-6.648-2.932-9.218a11.812 11.812 0 0 0-.414-.432A11.711 11.711 0 0 0 51.74 192c-3.144 0-6.095 1.21-8.308 3.408A11.543 11.543 0 0 0 40 203.655a11.543 11.543 0 0 0 3.432 8.248 11.711 11.711 0 0 0 8.308 3.408c2.598 0 5.164-.86 7.216-2.484l4.651 4.68a1.392 1.392 0 0 0 .526.334 1.51 1.51 0 0 0 .5.081 1.55 1.55 0 0 0 1.027-.414 1.365 1.365 0 0 0 .417-.796 1.447 1.447 0 0 0-.417-1.242Zm-7.666-5.605a8.688 8.688 0 0 0 2.598-6.21 8.688 8.688 0 0 0-2.598-6.21 8.814 8.814 0 0 0-6.254-2.579 8.87 8.87 0 0 0-6.255 2.58 8.688 8.688 0 0 0-2.598 6.21 8.743 8.743 0 0 0 2.598 6.21 8.87 8.87 0 0 0 6.255 2.579 8.87 8.87 0 0 0 6.254-2.58Z"
+                                    fill-rule="evenodd" data-name="Shape 52"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 ">
+                    <div class="btn-list align-items-center">
+                        <a class="downlode" title="Edit" href="/sms/number/add/">
+                            <button type="submit" class="btn btn-default-secondary">
+                                Add New Customer
+                            </button>
+                        </a>
+                        <span style="margin-left: 10px;"></span>
+                        <a href="#" class="downlode">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30.598" height="30.598" viewBox="1439 63 30.598 30.598"><path d="M1467.898 83.399a1.703 1.703 0 0 0-1.7 1.7v4.08a1.023 1.023 0 0 1-1.02 1.02h-21.758a1.023 1.023 0 0 1-1.02-1.02v-4.08a1.7 1.7 0 0 0-1.7-1.7 1.7 1.7 0 0 0-1.7 1.7v4.08a4.425 4.425 0 0 0 4.42 4.419h21.758a4.425 4.425 0 0 0 4.42-4.42v-4.08a1.703 1.703 0 0 0-1.7-1.7ZM1454.298 63a1.703 1.703 0 0 0-1.699 1.7v15.409l-5.372-4.475c-.69-.574-1.699-.51-2.312.126a1.726 1.726 0 0 0-.081.091c-.574.69-.51 1.7.127 2.312a1.726 1.726 0 0 0 .09.082l8.16 6.799a1.71 1.71 0 0 0 .272.158 1.615 1.615 0 0 0 .195.111 1.596 1.596 0 0 0 .619.125 1.597 1.597 0 0 0 .62-.125c.065-.032.129-.07.19-.11.095-.044.186-.097.272-.158l8.16-6.8a1.692 1.692 0 0 0 .567-.916c.11-.467.02-.975-.278-1.387a1.726 1.726 0 0 0-.07-.09 1.7 1.7 0 0 0-1.3-.613 1.707 1.707 0 0 0-1.088.395L1456 80.109v-15.41a1.703 1.703 0 0 0-1.7-1.699Z" fill="rgba(46, 49, 75, 1)" fill-rule="evenodd" data-name="Shape 51"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4 mb-4">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="bg-white card-header">
+                    <h5 class="fs-5 fw-600 m-0 text-uppercase">Customer List</h5> </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>User ID</th>
+                                            <th class="">Customer Name</th>
+                                            <th>Mobile Number</th>
+                                            <th>Email ID</th>
+                                            <th>Joining Date</th>
+                                            <th>Due Date</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% if product_list %}
+                                            {% for value in product_list%}
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td data-field="Action" style="width: 100px">
+                                                    <a class="edit-btn" href="/project/detail/{{ value.id }}" title="Edit">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="13.665" height="13.677">
+                                                            <path data-name="layer2"
+                                                            d="M63.1 30.9C62.6 30.1 50 12.5 32 12.5S1.4 30.1.9 30.9L.1 32l.8 1.1c.5.8 13.1 18.4 31.1 18.4s30.6-17.6 31.1-18.4l.8-1.1zM32 47.5C18.5 47.5 8 35.8 5 32c3-3.8 13.5-15.5 27-15.5S56 28.2 59 32c-3 3.8-13.5 15.5-27 15.5z"
+                                                            fill="#ffffff"></path>
+                                                            <path data-name="layer1" d="M32 19.5a12 12 0 1 0 12 12 12 12 0 0 0-12-12zm0 18a6 6 0 0 1-5.2-9 2 2 0 0 1 3.5 2 2 2 0 0 0-.3 1 2 2 0 0 0 2 2 2 2 0 1 1 0 4z"
+                                                            fill="#ffffff"></path>
+                                                        </svg>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        {% comment %} const ctx = document.getElementById('myChart'); {% endcomment %}
+
+        $(document).ready(function(){
+
+            var res_data = [];
+            var show_data = [];
+            var show_key = [];
+            var backgroundColor = [];
+            var $i = 0;
+            var colors = [];
+            var open_project = $("#open_project").val();
+            var design_project = $("#design_project").val();
+            var production_project_count = $("#production_project_count").val();
+            var close_project_count = $("#close_project_count").val();
+            var shipped_project_count = $("#shipped_project_count").val();
+    
+            colors[$i] = '#F16725';
+            show_data[$i] = open_project;
+            show_key[$i] = 'Project Open';
+            $i++;
+    
+            colors[$i] = 'blue';
+            show_data[$i] = design_project;
+            show_key[$i] = 'Project Design';
+            $i++;
+    
+            colors[$i] = '#FFC107';
+            show_data[$i] = production_project_count;
+            show_key[$i] = 'Project In Production';
+            $i++;
+    
+            colors[$i] = '#0DCAF0';
+            show_data[$i] = close_project_count;
+            show_key[$i] = 'Project Close';
+            $i++;
+    
+            colors[$i] = '#DC3545';
+            show_data[$i] = shipped_project_count;
+            show_key[$i] = 'Project Shipped';
+            $i++;
+    
+            var data = {
+                datasets: [{
+                    label : 'Project: ',
+                    data: show_data,
+                    backgroundColor: colors,
+                    borderWidth: 1
+                }],
+    
+                // These labels appear in the legend and in the tooltips when hovering different arcs
+               // labels: show_key
+            };
+          
+            var selectedIndex = null;
+            
+            const ctx = document.getElementById('myChart');
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: 'Info',
+                    data: [12, 19, 3, 5, 2, 3],
+                    borderWidth: 1
+                }]
+                },
+                options: {
+                scales: {
+                    y: {
+                    beginAtZero: true
+                    }
+                }
+                }
+            });
+            myChart.update();
+
+            $('#myChart').attr('style', 'display: block;box-sizing: border-box;height: 400px;width: 400px;');
+        });
+    </script>
+{% endblock %}
